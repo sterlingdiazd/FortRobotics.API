@@ -37,15 +37,19 @@ namespace FortRobotics.API.Repository
                 .Where(x => x.UserModel.Email == claimsPrincipal.Identity.Name)
                 .ToListAsync();
 
-            UserModel userModel = favoriteUserCities.FirstOrDefault().UserModel;
+            FavCities favCities = null; 
 
-            FavCities favCities = new FavCities()
+            if (favoriteUserCities != null && favoriteUserCities.FirstOrDefault() != null)
             {
-                Name = userModel.Name,
-                Email = userModel.Email,
-                favCities = _mapper.Map<List<Cities>>(favoriteUserCities.Select(x => x.CityModel).ToList())
-            };
-
+                UserModel userModel = favoriteUserCities.FirstOrDefault().UserModel;
+                favCities = new FavCities()
+                {
+                    Name = userModel.Name,
+                    Email = userModel.Email,
+                    favCities = _mapper.Map<List<Cities>>(favoriteUserCities.Select(x => x.CityModel).ToList())
+                };
+            }
+          
             return favCities;
         }
 

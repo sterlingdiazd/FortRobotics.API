@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FortRobotics.API.Migrations
 {
     [DbContext(typeof(FRContext))]
-    [Migration("20220513134652_init")]
+    [Migration("20220513224359_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

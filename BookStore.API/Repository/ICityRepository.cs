@@ -8,8 +8,8 @@ namespace FortRobotics.API.Repository
 {
     public interface ICityRepository
     {
-        Task<List<CityModel>> GetAllCitiesAsync();
-        Task<CityModel> GetCityByIdAsync(int cityId);
+        Task<List<Cities>> GetAllCitiesAsync();
+        Task<Cities> GetCityByIdAsync(int cityId);
         Task<int> AddCityAsync(CityModel cityModel);
         Task UpdateCityAsync(int cityId, CityModel cityModel);
         Task UpdateCityPatchAsync(int cityId, JsonPatchDocument cityModel);

@@ -31,6 +31,10 @@ namespace FortRobotics.API.Controllers
         public async Task<IActionResult> GetAllUserCities()
         {
             var userFavoriteCities = await userCityRepository.GetAllUserFavoriteCitiesAsync(HttpContext.User);
+            if(userFavoriteCities == null)
+            {
+                return NotFound();
+            }
             return Ok(userFavoriteCities);
         }
 

@@ -21,16 +21,16 @@ namespace FortRobotics.API.Repository
             _mapper = mapper;
         }
 
-        public async Task<List<CityModel>> GetAllCitiesAsync()
+        public async Task<List<Cities>> GetAllCitiesAsync()
         {
             var records = await _context.CityModel.ToListAsync();
-            return records;
+            return _mapper.Map<List<Cities>>(records);
         }
 
-        public async Task<CityModel> GetCityByIdAsync(int cityId)
+        public async Task<Cities> GetCityByIdAsync(int cityId)
         {
             var city = await _context.CityModel.FindAsync(cityId);
-            return _mapper.Map<CityModel>(city);
+            return _mapper.Map<Cities>(city);
         }
 
         public async Task<int> AddCityAsync(CityModel cityModel)
