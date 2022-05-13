@@ -7,9 +7,9 @@ namespace FortRobotics.API.Config
     {
         public static IServiceCollection AddInjectionDependency(this IServiceCollection services)
         {
-            services.AddTransient<ICityRepository, CityRepository>();
-            services.AddTransient<IAccountRepository, AccountRepository>();
-            services.AddTransient<IUserCityRepository, UserCityRepository>();
+            services.AddScoped<ICityRepository, CityRepository>();
+            services.AddScoped<IAccountRepository, AccountRepository>();
+            services.AddScoped<IUserCityRepository, UserCityRepository>();
             return services;
         }
     }

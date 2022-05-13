@@ -19,15 +19,15 @@ namespace FortRobotics.API.Repository
         private readonly FRContext _context;
         private readonly IMapper _mapper;
         private readonly UserManager<UserModel> userManager;
-        private readonly ICityRepository cityRepository;
 
-        public UserCityRepository(FRContext context, IMapper mapper, UserManager<UserModel> userManager, ICityRepository cityRepository)
+        public UserCityRepository(FRContext context, IMapper mapper, UserManager<UserModel> userManager)
         {
             _context = context;
             _mapper = mapper;
             this.userManager = userManager;
-            this.cityRepository = cityRepository;
         }
+
+
 
         public async Task<FavCities> GetAllUserFavoriteCitiesAsync(ClaimsPrincipal claimsPrincipal)
         {
@@ -55,8 +55,7 @@ namespace FortRobotics.API.Repository
 
         public async Task<int> AddUserFavoriteCityAsync(int id, ClaimsPrincipal claimsPrincipal)
         {
-            var city = await cityRepository.GetCityByIdAsync(id);
-            var cityModel = _mapper.Map<CityModel>(city);
+            var cityModel = await GetCityModelByIdAsync(id);
 
             var user = await userManager.FindByEmailAsync(claimsPrincipal.Identity.Name);
             var userModel = _mapper.Map<UserModel>(user);
@@ -73,6 +72,19 @@ namespace FortRobotics.API.Repository
             await _context.SaveChangesAsync();
             int.TryParse(favoriteUserCityModel.Id, out int result);
             return result;
+        }
+
+
+        public async Task<List<CityModel>> GetAllCityModelsAsync()
+        {
+            var records = await _context.CityModel.ToListAsync();
+            return records;
+        }
+
+        public async Task<CityModel> GetCityModelByIdAsync(int cityId)
+        {
+            var cityModel = await _context.CityModel.FindAsync(cityId);
+            return cityModel;
         }
 
         public async Task DeleteUserFavoriteCityAsync(int userCityId)

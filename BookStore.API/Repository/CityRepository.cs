@@ -33,6 +33,8 @@ namespace FortRobotics.API.Repository
             return _mapper.Map<Cities>(city);
         }
 
+
+
         public async Task<int> AddCityAsync(CityModel cityModel)
         {
             _context.CityModel.Add(cityModel); ;
