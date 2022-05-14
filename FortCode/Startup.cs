@@ -1,26 +1,18 @@
-using FortRobotics.API.Config;
-using FortRobotics.API.Data;
-using FortRobotics.API.Models;
-using FortRobotics.API.Repository;
+using FortCode.Config;
+using FortCode.Data;
+using FortCode.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace FortRobotics.API
+namespace FortCode
 {
     public class Startup
     {
@@ -35,7 +27,7 @@ namespace FortRobotics.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<FRContext>(
-                options => options.UseSqlServer(Configuration.GetConnectionString("BookStoreCS")));
+                options => options.UseSqlServer(Configuration.GetConnectionString("FortCodeCS")));
 
 
             services.AddIdentity<UserModel, IdentityRole>()

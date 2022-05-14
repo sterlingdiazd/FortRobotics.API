@@ -1,5 +1,5 @@
-﻿using FortRobotics.API.Data;
-using FortRobotics.API.Models;
+﻿using FortCode.Data;
+using FortCode.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -11,7 +11,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FortRobotics.API.Repository
+namespace FortCode.Repository
 {
     public class AccountRepository : IAccountRepository
     {

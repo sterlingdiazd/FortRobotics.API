@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-namespace FortRobotics.API.Models
+namespace FortCode.Models
 {
     public class SignUpModel
     {

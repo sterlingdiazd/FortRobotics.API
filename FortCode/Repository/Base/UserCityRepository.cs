@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using FortRobotics.API.Data;
-using FortRobotics.API.Models;
+using FortCode.Data;
+using FortCode.Models;
 using Microsoft.AspNetCore.JsonPatch;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -9,10 +9,10 @@ using System;
 using System.Linq;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
-using FortRobotics.API.Helpers;
+using FortCode.Helpers;
 using Microsoft.AspNetCore.Http;
 
-namespace FortRobotics.API.Repository
+namespace FortCode.Repository
 {
     public class UserCityRepository : IUserCityRepository
     {

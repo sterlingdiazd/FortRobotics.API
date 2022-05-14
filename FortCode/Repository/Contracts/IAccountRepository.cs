@@ -1,8 +1,8 @@
-﻿using FortRobotics.API.Models;
+﻿using FortCode.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 
-namespace FortRobotics.API.Repository
+namespace FortCode.Repository
 {
     public interface IAccountRepository
     {

@@ -1,9 +1,9 @@
-﻿using FortRobotics.API.Models;
+﻿using FortCode.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace FortRobotics.API.Models
+namespace FortCode.Models
 {
     public class UserModel : IdentityUser
     {

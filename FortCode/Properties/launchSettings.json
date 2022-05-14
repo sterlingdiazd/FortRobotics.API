@@ -5,24 +5,24 @@
 		"anonymousAuthentication": true,
 		"iisExpress": {
 			"applicationUrl": "http://localhost:60427",
-			"sslPort": 44341
+			"sslPort": 8100
 		}
 	},
 	"profiles": {
 		"IIS Express": {
 			"commandName": "IISExpress",
 			"launchBrowser": true,
-			"launchUrl": "api/account/login",
+			"launchUrl": "api/test",
 			"environmentVariables": {
 				"ASPNETCORE_ENVIRONMENT": "Development"
 			}
 		},
-		"FortRobotics.API": {
+		"FortCode": {
 			"commandName": "Project",
 			"dotnetRunMessages": "true",
 			"launchBrowser": true,
-			"launchUrl": "api/account/login",
-			"applicationUrl": "https://localhost:5001;http://localhost:5000",
+			"launchUrl": "api/test",
+			"applicationUrl": "http://localhost:5001;http://localhost:5000",
 			"environmentVariables": {
 				"ASPNETCORE_ENVIRONMENT": "Development"
 			}

@@ -1,6 +1,6 @@
-﻿using FortRobotics.API.Models;
+﻿using FortCode.Models;
 
-namespace FortRobotics.API.Models
+namespace FortCode.Models
 {
     public class FavoriteUserCityModel
     {

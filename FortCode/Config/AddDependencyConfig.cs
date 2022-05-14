@@ -1,7 +1,7 @@
-﻿using FortRobotics.API.Repository;
+﻿using FortCode.Repository;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace FortRobotics.API.Config
+namespace FortCode.Config
 {
     public static  class AddDependencyConfig
     {

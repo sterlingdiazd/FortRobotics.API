@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FortRobotics.API.Data
+namespace FortCode.Data
 {
     public class Cities
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace FortRobotics.API.Data
+namespace FortCode.Data
 {
     public class FavCities
     {

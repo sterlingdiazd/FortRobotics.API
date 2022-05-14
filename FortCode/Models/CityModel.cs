@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-using FortRobotics.API.Models;
+using FortCode.Models;
 
-namespace FortRobotics.API.Models
+namespace FortCode.Models
 {
     public class CityModel
     {

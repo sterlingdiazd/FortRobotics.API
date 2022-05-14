@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace FortRobotics.API.Migrations
+namespace FortCode.Migrations
 {
     public partial class init : Migration
     {

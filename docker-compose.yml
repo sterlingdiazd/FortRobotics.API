@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  db:
+    container_name: fort_code_db
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    ports:
+      - "8181:1433"
+    expose:
+      - "1433"
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: <YourStrong!Passw0rd>
+
+  api:
+    depends_on:
+      - db
+    build: .
+    container_name: fort_code_api
+    ports:
+      - "8100:80"
+    environment:
+      FORTCODEENV_ConnectionStrings__DbContext: "Server=db; Database=FortCodeDb; User Id=sa; Password=<YourStrong!Passw0rd>;"
+
+      
+          
