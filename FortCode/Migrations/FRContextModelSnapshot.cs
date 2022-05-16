@@ -51,7 +51,7 @@ namespace FortCode.Migrations
 
                     b.HasIndex("IdCity");
 
-                    b.ToTable("FavoriteUserCities");
+                    b.ToTable("FavoriteUserCityModel");
                 });
 
             modelBuilder.Entity("FortCode.Models.UserModel", b =>

@@ -10,6 +10,10 @@ namespace FortCode.Data
 {
     public class FRContext : IdentityDbContext<UserModel>
     {
+        
+        public DbSet<CityModel> CityModel { get; set; }
+        public DbSet<FavoriteUserCityModel> FavoriteUserCities { get; set; }
+
         public FRContext(DbContextOptions<FRContext> options)
             : base(options)
         {
@@ -33,7 +37,5 @@ namespace FortCode.Data
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<CityModel> CityModel { get; set; }
-        public DbSet<FavoriteUserCityModel> FavoriteUserCities { get; set; }
     }
 }

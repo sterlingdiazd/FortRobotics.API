@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FortCode.Migrations
 {
     [DbContext(typeof(FRContext))]
-    [Migration("20220514231528_init")]
+    [Migration("20220516005600_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,7 +53,7 @@ namespace FortCode.Migrations
 
                     b.HasIndex("IdCity");
 
-                    b.ToTable("FavoriteUserCities");
+                    b.ToTable("FavoriteUserCityModel");
                 });
 
             modelBuilder.Entity("FortCode.Models.UserModel", b =>

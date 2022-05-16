@@ -1,7 +1,9 @@
-﻿using FortCode.Models;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using FortCode.Models;
 
 namespace FortCode.Models
 {
+    [Table("FavoriteUserCityModel")]
     public class FavoriteUserCityModel
     {
         public string Id { get; set; }

@@ -7,9 +7,9 @@ namespace FortCode.Config
     {
         public static IServiceCollection AddInjectionDependency(this IServiceCollection services)
         {
-            services.AddScoped<ICityRepository, CityRepository>();
-            services.AddScoped<IAccountRepository, AccountRepository>();
-            services.AddScoped<IUserCityRepository, UserCityRepository>();
+            services.AddTransient<ICityRepository, CityRepository>();
+            services.AddTransient<IAccountRepository, AccountRepository>();
+            services.AddTransient<IUserCityRepository, UserCityRepository>();
             return services;
         }
     }

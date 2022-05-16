@@ -168,7 +168,7 @@ namespace FortCode.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "FavoriteUserCities",
+                name: "FavoriteUserCityModel",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
@@ -176,15 +176,15 @@ namespace FortCode.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FavoriteUserCities", x => new { x.Id, x.IdCity });
+                    table.PrimaryKey("PK_FavoriteUserCityModel", x => new { x.Id, x.IdCity });
                     table.ForeignKey(
-                        name: "FK_FavoriteUserCities_AspNetUsers_Id",
+                        name: "FK_FavoriteUserCityModel_AspNetUsers_Id",
                         column: x => x.Id,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_FavoriteUserCities_CityModel_IdCity",
+                        name: "FK_FavoriteUserCityModel_CityModel_IdCity",
                         column: x => x.IdCity,
                         principalTable: "CityModel",
                         principalColumn: "IdCity",
@@ -231,8 +231,8 @@ namespace FortCode.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_FavoriteUserCities_IdCity",
-                table: "FavoriteUserCities",
+                name: "IX_FavoriteUserCityModel_IdCity",
+                table: "FavoriteUserCityModel",
                 column: "IdCity");
         }
 
@@ -254,7 +254,7 @@ namespace FortCode.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "FavoriteUserCities");
+                name: "FavoriteUserCityModel");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
