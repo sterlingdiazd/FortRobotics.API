@@ -81,17 +81,18 @@ namespace FortCode
                 app.UseDeveloperExceptionPage();
             }
 
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
             app
                 .UseFileServer()
-                .UseRouting()
-                .UseEndpoints(endPoints => { endPoints.MapControllers(); });
+                .UseRouting();
+
 
             app.UseRouting();
             app.UseCors();
 
             app.UseAuthentication();
             app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints =>
             {
